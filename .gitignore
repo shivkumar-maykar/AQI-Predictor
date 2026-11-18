@@ -1,0 +1,42 @@
+# Python virtual environments
+python-env/
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Environment & local secrets
+.env
+.env.local
+.env.*.local
+
+# IDEs & Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Archives & build artifacts
+*.zip
+*.tar.gz
+dist/
+build/
+*.egg-info/

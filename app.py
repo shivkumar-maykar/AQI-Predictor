@@ -1,5 +1,6 @@
 
 import math
+import os
 
 import joblib
 import pandas as pd
@@ -9,7 +10,8 @@ from sklearn.preprocessing import PolynomialFeatures
 app = Flask(__name__)
 
 # Load the trained model and preprocessing objects
-bundle = joblib.load("aqi_model.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+bundle = joblib.load(os.path.join(BASE_DIR, "aqi_model.pkl"))
 
 scaler = bundle["scaler"]
 poly = bundle["poly"]
@@ -194,4 +196,5 @@ def home():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=10000, debug=False)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port, debug=False)
